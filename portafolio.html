@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_Portafolio | BIT-SEDA Studio</title>
+  <meta name="description" content="Portafolio de proyectos de BIT-SEDA Studio: diseño web, fotolitos y proyectos serigráficos.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Mocks de proyectos web (SVG/CSS) */
+    .mock-restaurante {
+      background: #1a0a00;
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+    }
+    .mock-nav-bar { height: 36px; background: #2a1000; display: flex; align-items: center; padding: 0 20px; gap: 15px; }
+    .mock-nav-dot { width: 60px; height: 8px; background: #B8860B; border-radius: 2px; }
+    .mock-nav-links { display: flex; gap: 10px; margin-left: auto; }
+    .mock-nav-link { width: 30px; height: 5px; background: #555; border-radius: 1px; }
+    .mock-hero-area { flex: 1; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; padding: 20px; }
+    .mock-hero-title { width: 70%; height: 20px; background: linear-gradient(90deg, #B8860B, #FFD700); border-radius: 2px; }
+    .mock-hero-sub { width: 50%; height: 8px; background: #444; border-radius: 2px; }
+    .mock-cta-btn { width: 80px; height: 22px; background: #B8860B; border-radius: 2px; }
+
+    .mock-seri {
+      background: #0d0d0d;
+      width: 100%; height: 100%;
+      display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+      gap: 2px; padding: 30px;
+    }
+    .mock-seri-card { background: #1a1a1a; border: 1px solid #222; display: flex; align-items: center; justify-content: center; }
+    .mock-seri-icon { font-size: 2rem; opacity: 0.5; }
+
+    .mock-ecommerce {
+      background: #f0f0f0;
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+    }
+    .mock-ecom-header { height: 40px; background: #fff; border-bottom: 1px solid #ddd; display: flex; align-items: center; padding: 0 15px; gap: 10px; }
+    .mock-ecom-logo { width: 50px; height: 10px; background: #121212; border-radius: 1px; }
+    .mock-ecom-search { flex: 1; height: 20px; background: #eee; border-radius: 10px; }
+    .mock-ecom-body { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 12px; }
+    .mock-ecom-card { background: #fff; border: 1px solid #eee; border-radius: 4px; }
+
+    .mock-landing {
+      background: #050510;
+      width: 100%; height: 100%;
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mock-landing::before {
+      content: '';
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(0,255,255,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .mock-landing-content { text-align: center; z-index: 1; }
+    .mock-landing-h { width: 120px; height: 18px; background: var(--c-cyan); margin: 0 auto 8px; opacity: 0.8; }
+    .mock-landing-p { width: 80px; height: 6px; background: #333; margin: 0 auto 12px; }
+    .mock-landing-btn { width: 70px; height: 20px; background: transparent; border: 1px solid var(--c-cyan); margin: 0 auto; }
+
+    .mock-fotolito {
+      background: #f4f4f0;
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .mock-fot-inner {
+      width: 70%; height: 70%;
+      background: #111;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .mock-fot-inner::before, .mock-fot-inner::after {
+      content: '';
+      position: absolute;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .mock-fot-inner::before { inset: 10px; }
+    .mock-fot-inner::after { inset: 20px; }
+    .mock-fot-text { color: #fff; font-family: var(--font-mono); font-size: 1.2rem; font-weight: 900; letter-spacing: 3px; }
+
+    .mock-catalog {
+      background: #121212;
+      width: 100%; height: 100%;
+      padding: 20px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .mock-cat-row { display: flex; gap: 8px; align-items: center; padding: 8px; border: 1px solid #222; }
+    .mock-cat-icon { width: 30px; height: 30px; background: #1a1a1a; border-radius: 2px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+    .mock-cat-info { flex: 1; }
+    .mock-cat-name { width: 80px; height: 7px; background: #E0E0E0; border-radius: 1px; margin-bottom: 4px; }
+    .mock-cat-sub { width: 50px; height: 5px; background: #333; border-radius: 1px; }
+    .mock-cat-badge { padding: 3px 8px; font-family: var(--font-mono); font-size: 0.55rem; border: 1px solid; }
+  </style>
+</head>
+<body data-section="portafolio">
+
+  <div class="halftone-overlay"></div>
+
+  <header>
+    <a href="index.html" class="logo-bitseda-code">
+      <div class="logo-text-main">BIT-SEDA</div>
+      <div class="logo-text-sub">STUDIO</div>
+    </a>
+    <nav>
+      <a href="index.html">00_Inicio</a>
+      <a href="web.html">01_Web</a>
+      <a href="fotolitos.html">02_Fotolitos</a>
+      <a href="insumos.html">03_Insumos</a>
+      <a href="portafolio.html" class="active">04_Portafolio</a>
+      <a href="nosotros.html">05_Nosotros</a>
+      <a href="contacto.html">06_Contacto</a>
+    </nav>
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="nav-mobile">
+    <a href="index.html">00_Inicio</a>
+    <a href="web.html">01_Web</a>
+    <a href="fotolitos.html">02_Fotolitos</a>
+    <a href="insumos.html">03_Insumos</a>
+    <a href="portafolio.html">04_Portafolio</a>
+    <a href="nosotros.html">05_Nosotros</a>
+    <a href="contacto.html">06_Contacto</a>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero-inner portfolio-hero">
+      <div class="registration-mark" style="top: 120px; right: 8%;"></div>
+      <p class="tech-text typewriter" style="color: var(--c-green); margin-bottom: 1rem;">>> MÓDULO 04 CARGADO | PORTAFOLIO</p>
+      <h1 class="print-offset">Registro de<br><span>Producción</span>.</h1>
+      <p class="subtitle">
+        Cada proyecto es un tiraje: planificado, ejecutado y entregado al 100% de opacidad. Aquí el resultado del trabajo que nos apasiona.
+      </p>
+    </section>
+
+    <!-- PORTAFOLIO -->
+    <section class="portfolio-section">
+
+      <!-- Filtros -->
+      <div class="portfolio-filter reveal">
+        <button class="pf-filter-btn active" data-filter="all">[ ALL ]</button>
+        <button class="pf-filter-btn" data-filter="web">Diseño Web</button>
+        <button class="pf-filter-btn" data-filter="fotolito">Fotolitos</button>
+        <button class="pf-filter-btn" data-filter="catalogo">Catálogos</button>
+      </div>
+
+      <!-- Grid de proyectos -->
+      <div class="portfolio-grid">
+
+        <!-- Proyecto 1: Restaurante -->
+        <div class="portfolio-item reveal" data-cat="web">
+          <div class="portfolio-mock" style="background:#1a0a00;">
+            <span class="mock-label">WEB / RESTAURANTE</span>
+            <div class="mock-restaurante" style="width:100%;height:100%;">
+              <div class="mock-nav-bar">
+                <div class="mock-nav-dot"></div>
+                <div class="mock-nav-links"><div class="mock-nav-link"></div><div class="mock-nav-link"></div><div class="mock-nav-link"></div></div>
+              </div>
+              <div class="mock-hero-area">
+                <div class="mock-hero-title"></div>
+                <div class="mock-hero-sub"></div>
+                <div class="mock-cta-btn" style="margin-top:8px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <h3 style="color: var(--c-yellow);">Restaurante El Fuego</h3>
+            <p>Sitio web completo con menú interactivo, galería y sistema de reservas por WhatsApp.</p>
+            <span class="tag" style="color: var(--c-cyan); border-color: var(--c-cyan);">WEB</span>
+          </div>
+        </div>
+
+        <!-- Proyecto 2: Serigrafía Web -->
+        <div class="portfolio-item reveal reveal-delay-1" data-cat="web">
+          <div class="portfolio-mock" style="background:#0d0d0d;">
+            <span class="mock-label">WEB / SERIGRAFÍA</span>
+            <div class="mock-seri" style="width:100%;height:100%;">
+              <div class="mock-seri-card"><div class="mock-seri-icon">🖨️</div></div>
+              <div class="mock-seri-card"><div class="mock-seri-icon">🎨</div></div>
+              <div class="mock-seri-card"><div class="mock-seri-icon">✂️</div></div>
+              <div class="mock-seri-card"><div class="mock-seri-icon">📦</div></div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <h3 style="color: var(--c-magenta);">TallerPrint GTM</h3>
+            <p>Landing page para taller de serigrafía con galería de trabajos y cotizador básico.</p>
+            <span class="tag" style="color: var(--c-cyan); border-color: var(--c-cyan);">WEB</span>
+          </div>
+        </div>
+
+        <!-- Proyecto 3: E-commerce -->
+        <div class="portfolio-item reveal reveal-delay-2" data-cat="web">
+          <div class="portfolio-mock" style="background:#f0f0f0;">
+            <span class="mock-label" style="color:#333;">WEB / E-COMMERCE</span>
+            <div class="mock-ecommerce" style="width:100%;height:100%;">
+              <div class="mock-ecom-header">
+                <div class="mock-ecom-logo"></div>
+                <div class="mock-ecom-search"></div>
+              </div>
+              <div class="mock-ecom-body">
+                <div class="mock-ecom-card"></div>
+                <div class="mock-ecom-card"></div>
+                <div class="mock-ecom-card"></div>
+                <div class="mock-ecom-card"></div>
+                <div class="mock-ecom-card"></div>
+                <div class="mock-ecom-card"></div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <h3 style="color: var(--c-yellow);">Tienda Artesanías GT</h3>
+            <p>E-commerce básico con catálogo de productos, carrito y enlace a WhatsApp para pedidos.</p>
+            <span class="tag" style="color: var(--c-cyan); border-color: var(--c-cyan);">WEB</span>
+          </div>
+        </div>
+
+        <!-- Proyecto 4: Landing Tech -->
+        <div class="portfolio-item reveal" data-cat="web">
+          <div class="portfolio-mock">
+            <span class="mock-label">WEB / LANDING</span>
+            <div class="mock-landing" style="width:100%;height:100%;">
+              <div class="mock-landing-content">
+                <div class="mock-landing-h"></div>
+                <div class="mock-landing-p"></div>
+                <div class="mock-landing-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <h3 style="color: var(--c-cyan);">Tech Consultora</h3>
+            <p>Landing page para empresa de consultoría tecnológica con formulario de contacto funcional.</p>
+            <span class="tag" style="color: var(--c-cyan); border-color: var(--c-cyan);">WEB</span>
+          </div>
+        </div>
+
+        <!-- Proyecto 5: Fotolito uniforme -->
+        <div class="portfolio-item reveal reveal-delay-1" data-cat="fotolito">
+          <div class="portfolio-mock">
+            <span class="mock-label">FOTOLITO / TEXTIL</span>
+            <div class="mock-fotolito" style="width:100%;height:100%;">
+              <div class="mock-fot-inner">
+                <span class="mock-fot-text">TEAM</span>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <h3 style="color: var(--c-magenta);">Uniformes Deportivos</h3>
+            <p>Set de 4 fotolitos para uniformes de equipo de fútbol. Tipografía vectorizada, bordes nítidos.</p>
+            <span class="tag" style="color: var(--c-magenta); border-color: var(--c-magenta);">FOTOLITO</span>
+          </div>
+        </div>
+
+        <!-- Proyecto 6: Fotolito cuatricomia -->
+        <div class="portfolio-item reveal reveal-delay-2" data-cat="fotolito">
+          <div class="portfolio-mock" style="background: #eee;">
+            <span class="mock-label" style="color:#333;">FOTOLITO / CMYK</span>
+            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;gap:4px;background:#ddd;">
+              <div style="width:50px;height:50px;background:rgba(0,255,255,0.7);border-radius:50%;mix-blend-mode:multiply;"></div>
+              <div style="width:50px;height:50px;background:rgba(255,0,255,0.7);border-radius:50%;mix-blend-mode:multiply;margin-left:-15px;"></div>
+              <div style="width:50px;height:50px;background:rgba(255,237,0,0.9);border-radius:50%;mix-blend-mode:multiply;margin-left:-15px;"></div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <h3 style="color: var(--c-magenta);">Cuatricomía Serigráfica</h3>
+            <p>Separación de 4 colores CMYK para estampado fotorrealista. Tramas de 45 LPI a ángulos precisos.</p>
+            <span class="tag" style="color: var(--c-magenta); border-color: var(--c-magenta);">FOTOLITO</span>
+          </div>
+        </div>
+
+        <!-- Proyecto 7: Catálogo digital -->
+        <div class="portfolio-item reveal" data-cat="catalogo">
+          <div class="portfolio-mock">
+            <span class="mock-label">CATÁLOGO / DIGITAL</span>
+            <div class="mock-catalog" style="width:100%;height:100%;">
+              <div class="mock-cat-row">
+                <div class="mock-cat-icon">🧪</div>
+                <div class="mock-cat-info"><div class="mock-cat-name"></div><div class="mock-cat-sub"></div></div>
+                <div class="mock-cat-badge" style="color:var(--c-green);border-color:var(--c-green);">OK</div>
+              </div>
+              <div class="mock-cat-row">
+                <div class="mock-cat-icon">🎨</div>
+                <div class="mock-cat-info"><div class="mock-cat-name"></div><div class="mock-cat-sub"></div></div>
+                <div class="mock-cat-badge" style="color:var(--c-yellow);border-color:var(--c-yellow);">OK</div>
+              </div>
+              <div class="mock-cat-row">
+                <div class="mock-cat-icon">🛠️</div>
+                <div class="mock-cat-info"><div class="mock-cat-name"></div><div class="mock-cat-sub"></div></div>
+                <div class="mock-cat-badge" style="color:var(--c-magenta);border-color:var(--c-magenta);">AGO</div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <h3 style="color: var(--c-yellow);">Catálogo Insumos Online</h3>
+            <p>Catálogo digital interactivo con filtros y consulta de disponibilidad por WhatsApp.</p>
+            <span class="tag" style="color: var(--c-yellow); border-color: var(--c-yellow);">CATÁLOGO</span>
+          </div>
+        </div>
+
+        <!-- Proyecto 8: CTA -->
+        <div class="portfolio-item reveal reveal-delay-1" style="background: var(--c-yellow);">
+          <div class="portfolio-overlay" style="opacity:1; background: transparent; pointer-events:none;">
+            <!-- siempre visible -->
+          </div>
+          <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center;">
+            <p class="tech-text" style="color: var(--c-black); margin-bottom: 1rem; font-size: 0.7rem;">>> TU PROYECTO AQUÍ</p>
+            <h3 style="font-size: 1.5rem; text-transform: uppercase; color: var(--c-black); font-weight: 900; margin-bottom: 1.5rem;">¿Listo para el siguiente tiraje?</h3>
+            <a href="contacto.html" style="display:inline-block; padding: 12px 24px; background: var(--c-black); color: var(--c-yellow); font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; font-weight: 700;">COTIZAR AHORA →</a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text-main">BIT-SEDA</span>
+        <span class="logo-text-sub" style="display:block; letter-spacing:5px; color:#444; font-size:0.6rem;">STUDIO</span>
+        <p>Diseño web profesional y soluciones serigráficas para Guatemala.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="web.html">Arquitectura Web</a></li>
+          <li><a href="fotolitos.html">Fotolitos</a></li>
+          <li><a href="insumos.html">Insumos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Estudio</h4>
+        <ul>
+          <li><a href="nosotros.html">Equipo</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 <span>BIT-SEDA Studio</span>. Portafolio Actualizado.</p>
+      <p class="tech-text" style="color: #333;">SYSTEM NORMAL. END OF FILE.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Volver arriba">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

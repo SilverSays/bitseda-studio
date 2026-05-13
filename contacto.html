@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06_Contacto | BIT-SEDA Studio</title>
+  <meta name="description" content="Contacta a BIT-SEDA Studio para cotizar tu página web, enviar archivos para fotolito o consultar sobre insumos de serigrafía.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-section="contacto">
+
+  <div class="halftone-overlay"></div>
+
+  <header>
+    <a href="index.html" class="logo-bitseda-code">
+      <div class="logo-text-main">BIT-SEDA</div>
+      <div class="logo-text-sub">STUDIO</div>
+    </a>
+    <nav>
+      <a href="index.html">00_Inicio</a>
+      <a href="web.html">01_Web</a>
+      <a href="fotolitos.html">02_Fotolitos</a>
+      <a href="insumos.html">03_Insumos</a>
+      <a href="portafolio.html">04_Portafolio</a>
+      <a href="nosotros.html">05_Nosotros</a>
+      <a href="contacto.html" class="active">06_Contacto</a>
+    </nav>
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="nav-mobile">
+    <a href="index.html">00_Inicio</a>
+    <a href="web.html">01_Web</a>
+    <a href="fotolitos.html">02_Fotolitos</a>
+    <a href="insumos.html">03_Insumos</a>
+    <a href="portafolio.html">04_Portafolio</a>
+    <a href="nosotros.html">05_Nosotros</a>
+    <a href="contacto.html">06_Contacto</a>
+  </div>
+
+  <main>
+    <section class="contact-section">
+      <div class="registration-mark" style="top: 100px; left: 5%;"></div>
+      <div class="registration-mark" style="bottom: 50px; right: 5%;"></div>
+
+      <div class="contact-container reveal">
+
+        <!-- COLUMNA 1: INFO -->
+        <div class="contact-info">
+          <div>
+            <p class="tech-text" style="color: var(--c-yellow); margin-bottom: 1rem;">>> PING AL SERVIDOR LOCAL</p>
+            <h1 class="print-offset">Inicia la<br><span>Transmisión</span>.</h1>
+            <p style="color: #A0A0A0; margin-top: 1rem; margin-bottom: 3rem; font-size: 0.95rem; line-height: 1.8;">
+              ¿Listo para compilar tu nueva página web o enviar tus archivos a impresión? Nuestro servidor y nuestro taller están escuchando.
+            </p>
+          </div>
+
+          <div>
+            <div class="terminal-data" style="margin-bottom: 2rem;">
+              <span style="color: var(--c-magenta); font-family: var(--font-mono); font-size: 0.82rem;">// COORDENADAS DEL TALLER</span><br>
+              <span class="key">HOST:</span>
+              <span class="val highlight">Villa Nueva, Guatemala</span><br>
+              <span class="key">TEL:</span>
+              <span class="val">+502 0000-0000</span><br>
+              <span class="key">MAIL:</span>
+              <span class="val">contacto@bitseda.gt</span><br>
+              <span class="key">STATUS:</span>
+              <span class="val" style="color: var(--c-green);">ONLINE (Lun–Vie | 9am–5pm)</span><br>
+            </div>
+
+            <!-- Indicador de respuesta -->
+            <div style="background: rgba(0,255,106,0.05); border: 1px solid rgba(0,255,106,0.2); padding: 1rem; margin-bottom: 2rem;">
+              <p class="tech-text" style="color: var(--c-green); font-size: 0.75rem;">
+                > TIEMPO DE RESPUESTA PROMEDIO:<br>
+                <span style="font-size: 1.2rem; color: var(--text-light);">2–4 horas hábiles</span>
+              </p>
+            </div>
+
+            <div class="social-links">
+              <a href="#" aria-label="Instagram">/IG</a>
+              <a href="#" aria-label="WhatsApp">/WA</a>
+              <a href="#" aria-label="Facebook">/FB</a>
+              <a href="#" aria-label="Behance">/BE</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMNA 2: FORMULARIO -->
+        <div class="contact-form">
+          <div class="form-header">
+            <h2>Formulario de Ingreso</h2>
+            <p class="tech-text" style="color: #666; margin-top: 5px;">[ COMPLETE LOS CAMPOS PARA EJECUTAR LA CONSULTA ]</p>
+          </div>
+
+          <!-- Formulario principal -->
+          <form action="#" method="POST">
+            <div class="form-group">
+              <label class="form-label">> [ IDENTIFICACIÓN / NOMBRE ]</label>
+              <input type="text" class="form-control" placeholder="Tu nombre o el de tu negocio" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">> [ RUTA DE RESPUESTA / EMAIL ]</label>
+              <input type="email" class="form-control" placeholder="correo@ejemplo.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">> [ CANAL DIRECTO / WHATSAPP ]</label>
+              <input type="tel" class="form-control" placeholder="+502 0000-0000 (opcional)">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">> [ MÓDULO REQUERIDO ]</label>
+              <select class="form-control" required>
+                <option value="" disabled selected>Selecciona un servicio...</option>
+                <option value="web">01. Cotización de Diseño Web</option>
+                <option value="fotolito">02. Impresión de Fotolito / Negativo</option>
+                <option value="insumos">03. Consulta sobre Insumos</option>
+                <option value="otro">04. Otro / Asesoría General</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">> [ CARGA DE DATOS / MENSAJE ]</label>
+              <textarea class="form-control" placeholder="Escribe los detalles de tu proyecto. Para fotolitos: medidas, cantidad de colores, uso final. Para web: tipo de negocio, páginas necesarias, referencias..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              <span>EJECUTAR ENVÍO ();</span>
+            </button>
+          </form>
+
+          <!-- Estado de éxito -->
+          <div class="form-success">
+            <span class="checkmark">✓</span>
+            <h3>Transmisión Exitosa</h3>
+            <p class="tech-text" style="color: #666; margin-top: 0.5rem; font-size: 0.8rem;">
+              > MENSAJE RECIBIDO. TE CONTACTAMOS EN 2–4 HRS.
+            </p>
+            <div style="margin-top: 2rem;">
+              <a href="index.html" class="btn-cyan" style="display: inline-flex;">Volver al Inicio</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section style="padding: 6rem 10%; background: var(--c-black); color: var(--text-light);">
+      <div class="section-header reveal" style="text-align:left; margin-bottom: 3rem;">
+        <span class="tech-text" style="color: var(--c-yellow); display:block; margin-bottom: 10px;">// PREGUNTAS FRECUENTES</span>
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); text-transform:uppercase; font-weight:900; color: var(--text-light);">FAQ del Sistema</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1000px;">
+
+        <div class="reveal" style="border-left: 3px solid var(--c-cyan); padding-left: 1.5rem;">
+          <h4 class="tech-text" style="color: var(--c-cyan); margin-bottom: 0.8rem; font-size: 0.85rem;">¿Cuánto tarda un fotolito?</h4>
+          <p style="color: #888; font-size: 0.9rem; line-height: 1.8;">El tiempo de producción es de <strong style="color:var(--text-light);">1–2 días hábiles</strong> dependiendo del volumen. Envíanos tu archivo y cotizamos al momento.</p>
+        </div>
+
+        <div class="reveal reveal-delay-1" style="border-left: 3px solid var(--c-magenta); padding-left: 1.5rem;">
+          <h4 class="tech-text" style="color: var(--c-magenta); margin-bottom: 0.8rem; font-size: 0.85rem;">¿Cuánto cuesta una página web?</h4>
+          <p style="color: #888; font-size: 0.9rem; line-height: 1.8;">Depende del alcance. Una landing page básica parte desde <strong style="color:var(--text-light);">Q1,500</strong>. Sitios multi-página con backend tienen un costo mayor. ¡Cotizamos gratis!</p>
+        </div>
+
+        <div class="reveal reveal-delay-2" style="border-left: 3px solid var(--c-yellow); padding-left: 1.5rem;">
+          <h4 class="tech-text" style="color: var(--c-yellow); margin-bottom: 0.8rem; font-size: 0.85rem;">¿Qué formatos aceptan para fotolitos?</h4>
+          <p style="color: #888; font-size: 0.9rem; line-height: 1.8;">PDF, AI, PSD y TIFF. Modo de color: <strong style="color:var(--text-light);">100% K en CMYK</strong>. Resolución mínima 300 dpi para imágenes raster.</p>
+        </div>
+
+        <div class="reveal" style="border-left: 3px solid var(--c-green); padding-left: 1.5rem;">
+          <h4 class="tech-text" style="color: var(--c-green); margin-bottom: 0.8rem; font-size: 0.85rem;">¿Trabajan con envíos a departamentos?</h4>
+          <p style="color: #888; font-size: 0.9rem; line-height: 1.8;">Sí. Coordinamos envíos a cualquier punto de Guatemala vía <strong style="color:var(--text-light);">Cargo Expreso o Guatex</strong>. Costo de envío por cuenta del cliente.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text-main">BIT-SEDA</span>
+        <span class="logo-text-sub" style="display:block; letter-spacing:5px; color:#444; font-size:0.6rem;">STUDIO</span>
+        <p>Diseño web profesional y soluciones serigráficas para Guatemala.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="web.html">Arquitectura Web</a></li>
+          <li><a href="fotolitos.html">Fotolitos</a></li>
+          <li><a href="insumos.html">Insumos</a></li>
+          <li><a href="portafolio.html">Portafolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Estudio</h4>
+        <ul>
+          <li><a href="nosotros.html">Equipo</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 <span>BIT-SEDA Studio</span>. Conexión Establecida.</p>
+      <p class="tech-text" style="color: #333;">SYSTEM NORMAL. END OF FILE.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Volver arriba">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

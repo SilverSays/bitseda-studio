@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03_Insumos | BIT-SEDA Studio</title>
+  <meta name="description" content="Catálogo de insumos para serigrafía: emulsiones, tintas, químicos, herramientas y tintas especiales.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-section="insumos">
+
+  <!-- Floating background items -->
+  <div class="parallax-container" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; overflow:hidden;">
+    <div class="floating-item item-1" style="position:absolute; font-size:5rem; opacity:0.06; color:var(--c-yellow); animation:float 12s infinite ease-in-out; top:15%; left:5%;">🧪</div>
+    <div class="floating-item item-2" style="position:absolute; font-size:4rem; opacity:0.06; color:var(--c-yellow); animation:float 18s infinite ease-in-out; animation-delay:-2s; top:45%; left:85%;">🎨</div>
+    <div class="floating-item item-3" style="position:absolute; font-size:6rem; opacity:0.04; color:var(--c-yellow); animation:float 20s infinite ease-in-out; top:75%; left:10%;">🪣</div>
+    <div class="floating-item item-4" style="position:absolute; font-size:3rem; opacity:0.06; color:var(--c-yellow); animation:float 15s infinite ease-in-out; animation-delay:-5s; top:30%; left:90%;">🛠️</div>
+    <div class="floating-item item-5" style="position:absolute; font-size:8rem; opacity:0.02; color:var(--c-yellow); animation:float 25s infinite ease-in-out; top:60%; left:80%;">⌖</div>
+  </div>
+
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-40px) rotate(10deg); }
+    }
+  </style>
+
+  <div class="halftone-overlay"></div>
+
+  <header>
+    <a href="index.html" class="logo-bitseda-code">
+      <div class="logo-text-main">BIT-SEDA</div>
+      <div class="logo-text-sub">STUDIO</div>
+    </a>
+    <nav>
+      <a href="index.html">00_Inicio</a>
+      <a href="web.html">01_Web</a>
+      <a href="fotolitos.html">02_Fotolitos</a>
+      <a href="insumos.html" class="active">03_Insumos</a>
+      <a href="portafolio.html">04_Portafolio</a>
+      <a href="nosotros.html">05_Nosotros</a>
+      <a href="contacto.html">06_Contacto</a>
+    </nav>
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="nav-mobile">
+    <a href="index.html">00_Inicio</a>
+    <a href="web.html">01_Web</a>
+    <a href="fotolitos.html">02_Fotolitos</a>
+    <a href="insumos.html">03_Insumos</a>
+    <a href="portafolio.html">04_Portafolio</a>
+    <a href="nosotros.html">05_Nosotros</a>
+    <a href="contacto.html">06_Contacto</a>
+  </div>
+
+  <main style="position:relative; z-index:1;">
+
+    <!-- HERO -->
+    <section class="hero-inner supply-hero">
+      <div class="registration-mark" style="top: 150px; right: 10%;"></div>
+      <p class="tech-text typewriter" style="color: var(--c-yellow); margin-bottom: 1rem;">>> MÓDULO 03 CARGADO | ALMACÉN</p>
+      <h1 class="print-offset">Hardware<br><span>Textil</span>.</h1>
+      <p class="subtitle">
+        Abastecemos tu línea de producción. Una selección hiper-curada de materiales de serigrafía. Solo ofrecemos lo que nosotros mismos testeamos y usamos en la mesa de trabajo.
+      </p>
+    </section>
+
+    <!-- INVENTARIO -->
+    <section class="supply-content">
+
+      <div class="inventory-intro reveal">
+        <span class="tech-text" style="color: #666; display: block; margin-bottom: 10px;">// MATERIA PRIMA CONFIABLE</span>
+        <h2 class="print-offset">Tu taller no puede detenerse.</h2>
+        <p>Sin el insumo correcto, la mejor técnica fracasa. Un revelado perfecto necesita una emulsión que no se caiga a mitad del tiraje, y un estampado duradero exige pigmentos que resistan lavada tras lavada.</p>
+      </div>
+
+      <!-- FILTRO INTERACTIVO -->
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">Todo el catálogo</button>
+        <button class="filter-btn" data-filter="quimico">Químicos</button>
+        <button class="filter-btn" data-filter="tinta">Tintas</button>
+        <button class="filter-btn" data-filter="herramienta">Herramientas</button>
+        <button class="filter-btn" data-filter="especial">Especiales</button>
+      </div>
+
+      <!-- GRID DE INVENTARIO -->
+      <div class="inventory-grid">
+
+        <div class="inventory-card reveal" data-cat="quimico">
+          <div class="card-header">
+            <span>ID_CAT: QUIM-01</span>
+            <span>[ STOCK: OK ]</span>
+          </div>
+          <div class="card-body">
+            <h3>🧪 Emulsiones</h3>
+            <p>Fotopolímeros puros y emulsiones al diazo de alta resolución. Resistentes a tintas plastisol, base agua o solventes. Excelente anclaje a la malla y fácil recuperación posterior.</p>
+          </div>
+          <div class="card-footer">> TIPO: FOTOSENSIBLE | DUAL</div>
+        </div>
+
+        <div class="inventory-card reveal reveal-delay-1" data-cat="tinta">
+          <div class="card-header">
+            <span>ID_CAT: PIGM-02</span>
+            <span>[ STOCK: OK ]</span>
+          </div>
+          <div class="card-body">
+            <h3>🎨 Tintas y Bases</h3>
+            <p>Plastisoles de alta opacidad, blancos cubrientes que no se cuartean, bases agua de tacto suave y tintas de descarga (discharge). Formulación estable para evitar que se sequen en la malla.</p>
+          </div>
+          <div class="card-footer">> TIPO: PLASTISOL / BASE AGUA</div>
+        </div>
+
+        <div class="inventory-card reveal reveal-delay-2" data-cat="quimico">
+          <div class="card-header">
+            <span>ID_CAT: SOLV-03</span>
+            <span>[ STOCK: OK ]</span>
+          </div>
+          <div class="card-body">
+            <h3>🧼 Químicos de Limpieza</h3>
+            <p>Desengrasantes preparadores de malla, removedores de emulsión (sericrom), quitafantasmas y limpiadores de tinta eficientes y amigables con el operador.</p>
+          </div>
+          <div class="card-footer">> TIPO: MANTENIMIENTO TALLER</div>
+        </div>
+
+        <div class="inventory-card reveal" data-cat="herramienta">
+          <div class="card-header">
+            <span>ID_CAT: HARD-04</span>
+            <span>[ STOCK: CONSULTAR ]</span>
+          </div>
+          <div class="card-body">
+            <h3>🛠️ Herramientas</h3>
+            <p>Gomas de rasero (squeegees) con diferentes durezas (durometros), espátulas para aplicar tinta, cinta canela y adhesivos en spray para paletas.</p>
+          </div>
+          <div class="card-footer">> TIPO: EQUIPAMIENTO MANUAL</div>
+        </div>
+
+        <div class="inventory-card reveal reveal-delay-1" data-cat="especial">
+          <div class="card-header" style="color: var(--c-cyan);">
+            <span>ID_CAT: INK-05</span>
+            <span>[ STOCK: OK ]</span>
+          </div>
+          <div class="card-body">
+            <h3>🪣 Tintas Especiales</h3>
+            <p>Colores Neón ultra brillantes, Metálicos (oro/plata), y efectos especiales como Puff (relieve 3D) y Reflectivas. Lleva tus estampados al siguiente nivel.</p>
+          </div>
+          <div class="card-footer">> TIPO: ACABADOS VISUALES / PREMIUM</div>
+        </div>
+
+        <div class="inventory-card reveal reveal-delay-2" data-cat="tinta">
+          <div class="card-header" style="color: var(--c-magenta);">
+            <span>ID_CAT: PIGM-06</span>
+            <span>[ STOCK: LIMITADO ]</span>
+          </div>
+          <div class="card-body">
+            <h3>💧 Pigmentos Puros</h3>
+            <p>Sistema de igualación de color de alta concentración. Diseñado para mezclarse con bases transparentes y lograr tonos Pantone exactos sin alterar la suavidad de la tinta.</p>
+          </div>
+          <div class="card-footer">> TIPO: SISTEMA PANTONE / MATIZ</div>
+        </div>
+
+      </div>
+
+      <!-- ANIMACIÓN RASERO -->
+      <section class="printing-press-section reveal">
+        <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+          <h2 class="print-offset" style="font-size: 2.2rem;">Cobertura Perfecta</h2>
+          <p class="tech-text" style="color: #666; margin-top: 10px;">[ PRUEBA DE ANCLAJE Y OPACIDAD DE TINTA EN CURSO ]</p>
+        </div>
+
+        <div class="screen-frame">
+          <div class="mesh-texture"></div>
+          <div class="print-design ghost"><span>PIGMENTO</span><span>ACTIVO</span></div>
+          <div class="print-design inked"><span>PIGMENTO</span><span>ACTIVO</span></div>
+          <div class="squeegee-assembly">
+            <div class="squeegee-handle">
+              <span class="tech-text" style="color: var(--c-black); font-size: 0.55rem;">BIT-SEDA SQUEEGEE // 75 DUROMETROS</span>
+            </div>
+            <div class="squeegee-blade"></div>
+            <div class="ink-wave"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA BANNER -->
+      <div class="stock-banner reveal">
+        <div>
+          <p>¿Buscas una marca, color o químico específico?</p>
+          <span style="font-size: 0.82rem; font-weight: 400;">> Contamos con venta por galón, litro o presentaciones de prueba.</span>
+        </div>
+        <a href="contacto.html" class="btn-yellow">CONSULTAR DISPONIBILIDAD &rarr;</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text-main">BIT-SEDA</span>
+        <span class="logo-text-sub" style="display:block; letter-spacing:5px; color:#444; font-size:0.6rem;">STUDIO</span>
+        <p>Diseño web profesional y soluciones serigráficas para Guatemala.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="web.html">Arquitectura Web</a></li>
+          <li><a href="fotolitos.html">Fotolitos</a></li>
+          <li><a href="insumos.html">Insumos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Estudio</h4>
+        <ul>
+          <li><a href="nosotros.html">Equipo</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 <span>BIT-SEDA Studio</span>. Módulo de Inventario Finalizado.</p>
+      <p class="tech-text" style="color: #333;">SYSTEM NORMAL. END OF FILE.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Volver arriba">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>
