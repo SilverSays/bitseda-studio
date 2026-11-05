@@ -1,14 +1,14 @@
 # Bit-Seda Studio
 
-Sitio web de mi **emprendimiento personal**: un pequeño estudio que combina **desarrollo web para negocios locales** y **serigrafía** (fotolitos e insumos), desde Villa Nueva, Guatemala. Lo diseñé y programé yo mismo con **HTML, CSS y JavaScript vanilla**, sin frameworks ni paso de compilación, y lo uso también como proyecto de portafolio.
+Sitio web de Bit-Seda Studio, un estudio ubicado en Villa Nueva, Guatemala, que combina **desarrollo web para negocios locales** y **serigrafía** (fotolitos e insumos). El proyecto está construido con **HTML, CSS y JavaScript vanilla**, sin frameworks ni paso de compilación.
 
-> **Demo:** _(publica el repo con GitHub Pages y pega aquí el enlace)_
+> **Demo:** [Bit-Seda Studio](https://silversays.github.io/bitseda-studio/)
 
 ![Portada](docs/screenshots/index.png)
 
-## Sobre el emprendimiento
+## Sobre el proyecto
 
-Bit-Seda Studio nace de mezclar dos mundos que conozco: la programación y el taller de serigrafía. La idea es ofrecer a pequeños negocios una página web propia, a medida y sin plantillas genéricas, y al mismo tiempo abastecer a otros serigrafistas con fotolitos de alta densidad e insumos. El sitio funciona como carta de presentación de ambos servicios.
+Bit-Seda Studio combina programación y serigrafía en una misma experiencia digital. El sitio presenta servicios de desarrollo web a medida para pequeños negocios, además de fotolitos de alta densidad e insumos para serigrafía.
 
 ## Qué demuestra este proyecto
 
@@ -81,17 +81,16 @@ npm run lint:html
 
 ## Personalización
 
-- **Colores:** variables al inicio de `css/base.css`. El acento de cada página se define con `data-theme` en el `<body>`.
-- **Datos de contacto:** el teléfono (`+502 0000 0000`) y el correo (`hola@bitseda.example`) en `contacto.html` son **ficticios**; reemplázalos con los reales.
-- **Equipo:** los nombres y roles de `nosotros.html` son de ejemplo; cámbialos o elimínalos según corresponda.
-- **Recibir mensajes del formulario:** crea un formulario en [Formspree](https://formspree.io) (u otro servicio equivalente) y pega su URL en el atributo `data-endpoint` de `<form id="contact-form">`. Sin endpoint, el formulario funciona en **modo demo** y no envía nada.
-- **Open Graph:** tras publicar, cambia `og:image` por una URL absoluta (por ejemplo `https://tu-usuario.github.io/bit-seda-studio/assets/img/og-image.png`).
+- **Colores:** las variables globales están al inicio de `css/base.css`. El acento de cada página se define con `data-theme` en el `<body>`.
+- **Datos de contacto:** el teléfono (`+502 0000 0000`) y el correo (`hola@bitseda.example`) de `contacto.html` son datos de ejemplo y deben sustituirse por los definitivos antes de publicar.
+- **Equipo:** los nombres y roles de `nosotros.html` son ilustrativos y pueden sustituirse o eliminarse.
+- **Recibir mensajes del formulario:** la URL de un formulario de [Formspree](https://formspree.io) u otro servicio equivalente puede configurarse en el atributo `data-endpoint` de `<form id="contact-form">`. Sin endpoint, el formulario funciona en modo demo y no envía mensajes.
+- **Open Graph:** `og:image` debe apuntar a una URL absoluta después de publicar el sitio.
 
 ## Despliegue en GitHub Pages
 
-1. Sube el repo a GitHub (rama `main`).
-2. En **Settings → Pages**, elige **Source: GitHub Actions**.
-3. Cada `push` a `main` valida el HTML y publica el sitio.
+1. En **Settings → Pages**, seleccionar **Source: GitHub Actions**.
+2. Cada `push` a `main` ejecuta la validación HTML y publica el sitio automáticamente.
 
 ## Créditos
 
