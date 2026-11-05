@@ -1,0 +1,275 @@
+/* ---------- 1. Tokens ---------- */
+:root {
+  /* Superficies */
+  --bg-dark: #121212;
+  --bg-paper: #f4f4f0;
+  --white: #fff;
+  --c-black: #050505;
+
+  /* Texto */
+  --text-light: #e0e0e0;
+  --text-dark: #1a1a1a;
+  --text-muted: #a0a0a0;   /* sobre fondo oscuro */
+  --text-subtle: #8a8a8a;  /* sobre fondo oscuro, texto secundario (AA) */
+  --text-muted-paper: #4a4a4a; /* sobre fondo papel */
+
+  /* CMYK */
+  --c-cyan: #00ffff;
+  --c-magenta: #ff00ff;
+  --c-yellow: #ffed00;
+
+  /* Acento de la página actual (se redefine con data-theme en <body>) */
+  --accent: var(--c-cyan);
+
+  /* Tipografía */
+  --font-display: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Layout */
+  --gutter: 10%;
+  --max-w: 1400px;
+  --radius: 6px;
+  --text-faint: #666;
+}
+
+body[data-theme="cyan"]    { --accent: var(--c-cyan); }
+body[data-theme="magenta"] { --accent: var(--c-magenta); }
+body[data-theme="yellow"]  { --accent: var(--c-yellow); }
+body[data-theme="light"]   { --accent: var(--text-light); }
+/* La portada y el equipo mantienen la línea del header neutra */
+body[data-theme="home"]    { --accent: var(--c-cyan); --header-line: var(--text-light); }
+
+/* ---------- 2. Reset ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-display);
+  background: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+ul, ol { list-style: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+
+/* ---------- 3. Accesibilidad ---------- */
+.skip-link {
+  position: absolute; left: 1rem; top: -4rem; z-index: 2000;
+  background: var(--c-yellow); color: var(--c-black);
+  padding: .75rem 1.25rem; font-family: var(--font-mono); font-weight: 700;
+  transition: top .2s;
+}
+.skip-link:focus { top: 1rem; }
+
+:focus-visible { outline: 3px solid var(--c-yellow); outline-offset: 3px; }
+
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+/* ---------- 4. Tipografía y utilidades ---------- */
+.tech-text {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: .85rem;
+  letter-spacing: 1px;
+}
+.tech-text--cyan    { color: var(--c-cyan); }
+.tech-text--magenta { color: var(--c-magenta); }
+.tech-text--yellow  { color: var(--c-yellow); }
+.tech-text--muted   { color: var(--text-subtle); }
+.tech-text--paper   { color: var(--text-muted-paper); } /* sobre fondo claro */
+
+.eyebrow { display: block; margin-bottom: .75rem; }
+
+/* Efecto "fuera de registro" (misregistration) al pasar el mouse */
+.print-offset { transition: text-shadow .2s ease-in-out; }
+.print-offset:hover { text-shadow: -2px 0 var(--c-cyan), 2px 0 var(--c-magenta); }
+
+/* Trama de puntos (halftone) global */
+.halftone-overlay {
+  position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: .03;
+  background-image: radial-gradient(var(--text-light) 2px, transparent 2px);
+  background-size: 12px 12px;
+}
+
+/* Marcas de registro decorativas */
+.registration-mark {
+  position: absolute; width: 20px; height: 20px;
+  border: 1px solid var(--text-light); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+.registration-mark::before { content: ""; position: absolute; width: 30px; height: 1px; background: var(--text-light); }
+.registration-mark::after  { content: ""; position: absolute; width: 1px; height: 30px; background: var(--text-light); }
+
+/* Cabecera de sección reutilizable */
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem); text-transform: uppercase; font-weight: 900;
+  display: inline-block;
+}
+.section-header .tech-text { margin-top: .75rem; }
+
+/* Efecto de tecleado (la longitud se define con --chars en cada elemento) */
+.typewriter {
+  display: inline-block; max-width: 100%;
+  overflow: hidden; white-space: nowrap;
+  border-right: 6px solid var(--c-cyan);
+  width: 0;
+  animation:
+    typing 1.5s steps(var(--chars, 26), end) forwards,
+    caret .8s step-end infinite;
+}
+@keyframes typing { to { width: calc(var(--chars, 26) * (1ch + 1px) + 8px); } }
+@keyframes caret  { 0%, 100% { border-color: transparent; } 50% { border-color: var(--c-cyan); } }
+
+/* Aparición al hacer scroll (solo si JS está activo) */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+/* ---------- 5. Header y navegación ---------- */
+.site-header {
+  position: fixed; inset: 0 0 auto 0; z-index: 1000;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 5%;
+  background: rgba(18, 18, 18, .95);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--header-line, var(--accent));
+}
+
+.brand {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-decoration: none; padding: 8px 15px;
+  border: 2px solid var(--text-light); background: var(--bg-dark);
+  transition: .3s;
+}
+.brand-name {
+  font-weight: 900; font-size: 1.4rem; line-height: 1; letter-spacing: 1px;
+  color: var(--text-light); transition: .3s;
+}
+.brand-sub {
+  font-family: var(--font-mono); font-size: .65rem; letter-spacing: 5px;
+  color: var(--text-subtle); margin-top: 4px; transition: .3s;
+}
+.brand:hover { border-color: var(--c-cyan); box-shadow: 4px 4px 0 var(--c-magenta); transform: translate(-2px, -2px); }
+.brand:hover .brand-name { text-shadow: -2px 0 var(--c-cyan), 2px 0 var(--c-magenta); }
+.brand:hover .brand-sub { color: var(--c-yellow); }
+
+.site-nav ul { display: flex; gap: 28px; }
+.site-nav a {
+  position: relative; display: block; padding-bottom: 5px;
+  color: var(--text-light); text-decoration: none;
+  font-weight: 700; font-size: .85rem; text-transform: uppercase;
+  transition: color .3s;
+}
+.site-nav a::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 0; height: 3px; background: var(--accent); transition: width .3s;
+}
+.site-nav a:hover,
+.site-nav a[aria-current="page"] { color: var(--accent); }
+.site-nav a:hover::after,
+.site-nav a[aria-current="page"]::after { width: 100%; }
+
+.nav-toggle {
+  display: none; align-items: center; justify-content: center;
+  width: 46px; height: 46px; cursor: pointer;
+  background: transparent; border: 2px solid var(--text-light);
+}
+.nav-toggle-bars,
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  display: block; width: 22px; height: 2px; background: var(--text-light);
+  transition: transform .25s, opacity .25s;
+}
+.nav-toggle-bars { position: relative; }
+.nav-toggle-bars::before,
+.nav-toggle-bars::after { content: ""; position: absolute; left: 0; }
+.nav-toggle-bars::before { top: -7px; }
+.nav-toggle-bars::after  { top: 7px; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars { background: transparent; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::before { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::after  { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 1100px) {
+  .nav-toggle { display: inline-flex; }
+  .site-nav {
+    position: absolute; top: 100%; left: 0; right: 0;
+    display: none; padding: .5rem 5% 1.5rem;
+    background: rgba(18, 18, 18, .98);
+    border-bottom: 2px solid var(--accent);
+  }
+  .site-nav.is-open { display: block; }
+  .site-nav ul { flex-direction: column; gap: 0; }
+  .site-nav a { padding: 1rem 0; border-bottom: 1px solid #2a2a2a; font-size: .95rem; }
+  .site-nav a::after { display: none; }
+}
+
+/* ---------- 6. Botones ---------- */
+.btn {
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 15px 30px;
+  font-family: var(--font-mono); font-weight: 700; text-transform: uppercase;
+  text-decoration: none; text-align: center; cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform .2s, background .3s, color .3s;
+}
+
+/* Primario: sombra CMYK desplazada */
+.btn--primary { background: var(--text-light); color: var(--bg-dark); border: none; }
+.btn--primary::before {
+  content: ""; position: absolute; top: 5px; left: 5px; width: 100%; height: 100%;
+  background: var(--c-cyan); z-index: -1; transition: .2s;
+}
+.btn--primary:hover { transform: translate(-2px, -2px); }
+.btn--primary:hover::before { top: 8px; left: 8px; background: var(--c-magenta); }
+
+/* Contorno con color de acento */
+.btn--outline { background: var(--text-dark); color: var(--btn-color, var(--accent)); border-color: var(--btn-color, var(--accent)); }
+.btn--outline:hover { background: var(--btn-color, var(--accent)); color: var(--text-dark); }
+.btn--cyan    { --btn-color: var(--c-cyan); }
+.btn--magenta { --btn-color: var(--c-magenta); }
+
+/* Negro sobre amarillo */
+.btn--black { padding: 12px 24px; background: var(--c-black); color: var(--c-yellow); border-color: var(--c-black); }
+.btn--black:hover { background: transparent; color: var(--c-black); }
+
+/* ---------- 7. Footer ---------- */
+.site-footer {
+  position: relative; text-align: center;
+  padding: 4rem 5% 3rem;
+  background: var(--c-black); border-top: 1px solid #333;
+  font-family: var(--font-mono);
+}
+.site-footer .registration-mark { bottom: 1.25rem; left: 50%; transform: translateX(-50%); }
+.footer-nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.5rem; margin-bottom: 1.5rem; }
+.footer-nav a { font-size: .8rem; color: var(--text-muted); text-decoration: none; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-note { margin-top: .75rem; color: var(--text-subtle); font-size: .8rem; }
+
+/* ---------- 8. Movimiento reducido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  .typewriter { width: auto; border-right: none; }
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+/* TODO: modo claro */
+.theme-toggle { display: none; }
+
+.old-banner { background: var(--c-yellow); padding: 4px; }

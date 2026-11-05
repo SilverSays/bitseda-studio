@@ -1,0 +1,62 @@
+/* ==========================================================================
+   Equipo (nosotros.html)
+   ========================================================================== */
+
+.team-section {
+  min-height: 100vh; padding: 10rem 5% 5rem;
+  background: radial-gradient(circle at 50% 0%, #1a1a1a 0%, var(--bg-dark) 70%);
+}
+.team-section .section-header { margin-bottom: 5rem; }
+.team-section .section-header h1 { margin-bottom: 1rem; font-size: clamp(2.4rem, 6vw, 3.5rem); line-height: 1.1; text-transform: uppercase; font-weight: 900; }
+.team-section .section-header p.lead { max-width: 600px; margin: 0 auto; font-size: 1.15rem; color: var(--text-muted); }
+
+.polaroid-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 3rem;
+  max-width: 1200px; margin: 0 auto; padding: 2rem;
+}
+
+/* Polaroid */
+.polaroid {
+  --tilt: 0deg; --tape: rgba(255, 255, 255, .4); --role: var(--c-magenta);
+  position: relative; display: flex; flex-direction: column; align-items: center;
+  padding: 15px 15px 30px; background: var(--bg-paper);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, .5);
+  transform: rotate(var(--tilt));
+  transition: transform .4s cubic-bezier(.175, .885, .32, 1.275), box-shadow .4s;
+}
+.polaroid::before { /* Cinta adhesiva */
+  content: ""; position: absolute; top: -10px; z-index: 10; width: 80px; height: 25px;
+  background: var(--tape); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .2); transform: rotate(-3deg);
+}
+.polaroid:hover,
+.polaroid:focus-within { transform: scale(1.05) rotate(0deg); z-index: 50; box-shadow: 10px 15px 30px rgba(0, 255, 255, .2); }
+
+.polaroid:nth-child(1) { --tilt: -3deg; }
+.polaroid:nth-child(2) { --tilt: 2deg;  --tape: rgba(0, 255, 255, .35); }
+.polaroid:nth-child(3) { --tilt: -1deg; }
+.polaroid:nth-child(4) { --tilt: 4deg;  --role: #008b8b; }
+.polaroid:nth-child(5) { --tilt: -4deg; --tape: rgba(255, 237, 0, .4); }
+.polaroid:nth-child(6) { --tilt: 1deg; }
+
+.polaroid-photo {
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+  width: 100%; aspect-ratio: 1; background: var(--c-black); border: 1px solid #333;
+}
+.avatar-svg { width: 70%; height: 70%; transition: transform .3s; }
+.polaroid:hover .avatar-svg { transform: scale(1.1); }
+
+.polaroid-text { width: 100%; margin-top: 15px; text-align: center; }
+.polaroid-name {
+  margin-bottom: 8px; padding-bottom: 5px;
+  font-weight: 900; font-size: 1.05rem; letter-spacing: -.5px; text-transform: uppercase;
+  color: var(--text-dark); border-bottom: 1px solid #ccc;
+}
+.polaroid-role {
+  font-family: "Nanum Pen Script", cursive; font-size: 1.5rem; line-height: 1;
+  color: var(--role); transform: rotate(-2deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .polaroid:hover, .polaroid:focus-within { transform: rotate(var(--tilt)); }
+}

@@ -1,0 +1,11 @@
+/* Tipografías autoalojadas (subset latin, licencia SIL OFL 1.1).
+   Fuente de los archivos: paquetes @fontsource (Montserrat, Space Mono, Nanum Pen Script). */
+
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/montserrat-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 700; font-display: swap; src: url("../assets/fonts/montserrat-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 900; font-display: swap; src: url("../assets/fonts/montserrat-latin-900-normal.woff2") format("woff2"); }
+
+@font-face { font-family: "Space Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/space-mono-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Space Mono"; font-style: normal; font-weight: 700; font-display: swap; src: url("../assets/fonts/space-mono-latin-700-normal.woff2") format("woff2"); }
+
+@font-face { font-family: "Nanum Pen Script"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/nanum-pen-script-latin-400-normal.woff2") format("woff2"); }

@@ -1,0 +1,17 @@
+{
+  "name": "bit-seda-studio",
+  "version": "1.0.0",
+  "description": "Sitio web multipágina para Bit-Seda Studio (desarrollo web + serigrafía). HTML, CSS y JS vanilla.",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "npx --yes serve . -l 3000",
+    "lint:html": "html-validate \"*.html\"",
+    "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,json,md}\""
+  },
+  "devDependencies": {
+    "html-validate": "^9.0.0",
+    "prettier": "^3.3.0"
+  }
+}

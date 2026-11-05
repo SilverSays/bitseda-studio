@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05 Contacto | Bit-Seda Studio</title>
+  <meta name="description" content="Cotiza tu sitio web, envía tus archivos a impresión o consulta insumos serigráficos con Bit-Seda Studio.">
+  <meta name="theme-color" content="#121212">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Open Graph / Twitter (al publicar, cambia og:image por una URL absoluta) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_GT">
+  <meta property="og:site_name" content="Bit-Seda Studio">
+  <meta property="og:title" content="05 Contacto | Bit-Seda Studio">
+  <meta property="og:description" content="Cotiza tu sitio web, envía tus archivos a impresión o consulta insumos serigráficos con Bit-Seda Studio.">
+  <meta property="og:image" content="assets/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preload" href="assets/fonts/montserrat-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pages/contacto.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body data-theme="yellow">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="halftone-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Bit-Seda Studio, ir al inicio">
+      <span class="brand-name">BIT-SEDA</span>
+      <span class="brand-sub">STUDIO</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+      <span class="nav-toggle-bars"></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Principal">
+      <ul>
+          <li><a href="index.html">00_Inicio</a></li>
+          <li><a href="web.html">01_Código_&amp;_Web</a></li>
+          <li><a href="fotolitos.html">02_Fotolitos</a></li>
+          <li><a href="insumos.html">03_Insumos</a></li>
+          <li><a href="nosotros.html">04_Nosotros</a></li>
+          <li><a href="contacto.html" aria-current="page">05_Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="contact-section" aria-labelledby="page-title">
+      <div class="registration-mark" style="top: 110px; left: 5%;" aria-hidden="true"></div>
+      <div class="registration-mark" style="bottom: 50px; right: 5%;" aria-hidden="true"></div>
+
+      <div class="contact-container">
+        <div class="contact-info">
+          <div>
+            <p class="tech-text tech-text--yellow">&gt;&gt; PING AL SERVIDOR LOCAL</p>
+            <h1 id="page-title" class="print-offset">Inicia la<br><span>transmisión</span>.</h1>
+            <p class="lead">¿Listo para compilar tu nueva página web o enviar tus archivos a impresión? Nuestro servidor (y nuestro taller) están escuchando.</p>
+          </div>
+
+          <div class="terminal-data">
+          <p class="tech-text tech-text--magenta">// COORDENADAS DEL TALLER</p>
+          <dl>
+            <dt>HOST:</dt><dd class="highlight">Villa Nueva, Guatemala</dd>
+            <dt>PORT:</dt><dd>+502 0000 0000</dd>
+            <dt>MAIL:</dt><dd><a href="mailto:hola@bitseda.example">hola@bitseda.example</a></dd>
+            <dt>STATUS:</dt><dd class="online">ONLINE (Lun-Vie | 9am - 5pm)</dd>
+          </dl>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <div class="form-header">
+            <h2>Formulario de ingreso</h2>
+            <p class="tech-text tech-text--paper">[ COMPLETE LOS CAMPOS PARA EJECUTAR LA CONSULTA ]</p>
+          </div>
+
+          <!-- Para recibir mensajes reales, pon aquí un endpoint (p. ej. Formspree) en data-endpoint -->
+          <form id="contact-form" method="post" novalidate data-endpoint="">
+            <div class="form-group">
+              <label class="form-label" for="name">&gt; [ IDENTIFICACIÓN / NOMBRE ]</label>
+              <input class="form-control" type="text" id="name" name="name" autocomplete="name" placeholder="Tu nombre o el de tu negocio" required aria-describedby="name-error">
+              <p class="field-error" id="name-error" role="alert"></p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">&gt; [ RUTA DE RESPUESTA / EMAIL ]</label>
+              <input class="form-control" type="email" id="email" name="email" autocomplete="email" placeholder="correo@ejemplo.com" required aria-describedby="email-error">
+              <p class="field-error" id="email-error" role="alert"></p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="service">&gt; [ MÓDULO REQUERIDO ]</label>
+              <select class="form-control" id="service" name="service" required aria-describedby="service-error">
+                <option value="" disabled selected>Selecciona un servicio...</option>
+                <option value="web">01. Cotización de diseño web</option>
+                <option value="fotolito">02. Impresión de fotolito / negativo</option>
+                <option value="insumos">03. Consulta sobre insumos</option>
+                <option value="otro">04. Otro / asesoría</option>
+              </select>
+              <p class="field-error" id="service-error" role="alert"></p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">&gt; [ CARGA DE DATOS / MENSAJE ]</label>
+              <textarea class="form-control" id="message" name="message" minlength="10" placeholder="Escribe los detalles de tu proyecto o las medidas de tu diseño a imprimir..." required aria-describedby="message-error"></textarea>
+              <p class="field-error" id="message-error" role="alert"></p>
+            </div>
+
+            <!-- Honeypot anti-spam -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="website">No rellenar</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <button type="submit" class="btn-submit"><span>EJECUTAR ENVÍO ();</span></button>
+            <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav" aria-label="Pie de página">
+      <ul>
+        <li><a href="index.html">00_Inicio</a></li>
+        <li><a href="web.html">01_Código_&amp;_Web</a></li>
+        <li><a href="fotolitos.html">02_Fotolitos</a></li>
+        <li><a href="insumos.html">03_Insumos</a></li>
+        <li><a href="nosotros.html">04_Nosotros</a></li>
+        <li><a href="contacto.html">05_Contacto</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2026 Bit-Seda Studio. Villa Nueva, Guatemala.</p>
+    <p class="footer-note">Proyecto de portafolio · sitio de demostración, datos de contacto ficticios.</p>
+    <div class="registration-mark" aria-hidden="true"></div>
+  </footer>
+</body>
+</html>
