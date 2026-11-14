@@ -1,102 +1,102 @@
 # Bit-Seda Studio
 
-Sitio web de Bit-Seda Studio, un estudio ubicado en Villa Nueva, Guatemala, que combina **desarrollo web para negocios locales** y **serigrafía** (fotolitos e insumos). El proyecto está construido con **HTML, CSS y JavaScript vanilla**, sin frameworks ni paso de compilación.
+Website for Bit-Seda Studio, a studio in Villa Nueva, Guatemala, that combines **web development for local businesses** and **screen printing** (film positives and supplies). Built with **HTML, CSS and vanilla JavaScript**, no frameworks and no build step. The site's content is in Spanish.
 
 > **Demo:** [Bit-Seda Studio](https://silversays.github.io/bitseda-studio/)
 
-![Portada](docs/screenshots/index.png)
+![Home page](docs/screenshots/index.png)
 
-## Sobre el proyecto
+## About the project
 
-Bit-Seda Studio combina programación y serigrafía en una misma experiencia digital. El sitio presenta servicios de desarrollo web a medida para pequeños negocios, además de fotolitos de alta densidad e insumos para serigrafía.
+Bit-Seda Studio brings programming and screen printing together in one digital experience. The site presents custom web development services for small businesses, plus high-density film positives and screen printing supplies.
 
-## Qué demuestra este proyecto
+## What this project shows
 
-- **Dirección visual propia:** estética "CMYK sobre modo oscuro" con metáforas de impresión (marcas de registro, tramas de semitono, efecto fuera de registro).
-- **Animaciones solo con CSS:** código que se teclea y se renderiza en vivo, separación de capas CMYK con `mix-blend-mode`, rasero de serigrafía con `clip-path`, línea de tiempo con pulso de datos.
-- **Arquitectura CSS mantenible:** tokens en variables CSS, una hoja base y una hoja por página, y tema de color por página con `data-theme` (un solo cambio recolorea header, navegación y acentos).
-- **Accesibilidad:** enlace para saltar al contenido, menú móvil con `aria-expanded` y cierre con `Esc`, `aria-current` en la navegación, foco visible, etiquetas asociadas en el formulario, animaciones decorativas ocultas a lectores de pantalla y soporte de `prefers-reduced-motion`.
-- **Formulario con validación nativa + mensajes propios**, honeypot anti-spam, preselección del servicio por URL (`contacto.html?servicio=web`) y envío opcional a un endpoint externo.
-- **Responsive real** (probado de 390 px a 1440 px, sin desbordes horizontales).
-- **Rendimiento:** fuentes autoalojadas en `woff2`, imagen del logo optimizada (WebP, 97 KB), cero dependencias en tiempo de ejecución.
-- **SEO y compartición:** `title` y `description` por página, Open Graph / Twitter Card, favicon SVG y página 404.
-- **Calidad automatizada:** validación HTML con `html-validate` en GitHub Actions y despliegue automático a GitHub Pages.
+- **Its own visual direction:** a "CMYK on dark mode" look with print metaphors (registration marks, halftone patterns, an off-register effect).
+- **CSS-only animations:** code that types itself and renders live, CMYK layer separation with `mix-blend-mode`, a screen printing squeegee with `clip-path`, a timeline with a data pulse.
+- **Maintainable CSS architecture:** tokens in CSS variables, one base stylesheet plus one per page, and a per-page color theme with `data-theme` (a single change recolors the header, navigation and accents).
+- **Accessibility:** skip-to-content link, mobile menu with `aria-expanded` and `Esc` to close, `aria-current` in the navigation, visible focus, labeled form fields, decorative animations hidden from screen readers, and `prefers-reduced-motion` support.
+- **Form with native validation + custom messages**, an anti-spam honeypot, service preselected from the URL (`contacto.html?servicio=web`) and optional submission to an external endpoint.
+- **Actually responsive** (tested from 390 px to 1440 px, no horizontal overflow).
+- **Performance:** self-hosted `woff2` fonts, optimized logo image (WebP, 97 KB), zero runtime dependencies.
+- **SEO and sharing:** per-page `title` and `description`, Open Graph / Twitter Card, SVG favicon and a 404 page.
+- **Automated quality checks:** HTML validation with `html-validate` in GitHub Actions and automatic deployment to GitHub Pages.
 
-## Páginas
+## Pages
 
-| Página | Contenido |
+| Page | Content |
 |---|---|
-| `index.html` | Portada, filosofía y servicios |
-| `web.html` | Módulo de desarrollo web, simulación código→navegador y proceso de trabajo |
-| `fotolitos.html` | Módulo de pre-prensa, simulación de separación CMYK y especificaciones de archivo |
-| `insumos.html` | Catálogo de insumos y simulación de estampado con rasero |
-| `nosotros.html` | Equipo en formato polaroid con avatares SVG |
-| `contacto.html` | Formulario y datos de contacto |
+| `index.html` | Home, philosophy and services |
+| `web.html` | Web development module, code→browser simulation and work process |
+| `fotolitos.html` | Pre-press module (film positives), CMYK separation simulation and file specs |
+| `insumos.html` | Supplies catalog and squeegee printing simulation |
+| `nosotros.html` | Team in polaroid format with SVG avatars |
+| `contacto.html` | Form and contact details |
 
 <p>
-  <img src="docs/screenshots/web.png" width="49%" alt="Página de desarrollo web">
-  <img src="docs/screenshots/fotolitos.png" width="49%" alt="Página de fotolitos">
+  <img src="docs/screenshots/web.png" width="49%" alt="Web development page">
+  <img src="docs/screenshots/fotolitos.png" width="49%" alt="Film positives page">
 </p>
 <p>
-  <img src="docs/screenshots/insumos.png" width="49%" alt="Página de insumos">
-  <img src="docs/screenshots/nosotros.png" width="49%" alt="Página del equipo">
+  <img src="docs/screenshots/insumos.png" width="49%" alt="Supplies page">
+  <img src="docs/screenshots/nosotros.png" width="49%" alt="Team page">
 </p>
 <p>
-  <img src="docs/screenshots/mobile.png" width="30%" alt="Vista móvil">
+  <img src="docs/screenshots/mobile.png" width="30%" alt="Mobile view">
 </p>
 
-## Estructura
+## Structure
 
 ```
 .
 ├── index.html · web.html · fotolitos.html · insumos.html · nosotros.html · contacto.html · 404.html
 ├── css/
-│   ├── fonts.css          # @font-face (fuentes autoalojadas)
-│   ├── base.css           # tokens, reset, header/footer, botones, utilidades
-│   └── pages/             # estilos específicos de cada página
-├── js/main.js             # menú móvil, reveal on scroll, formulario
+│   ├── fonts.css          # @font-face (self-hosted fonts)
+│   ├── base.css           # tokens, reset, header/footer, buttons, utilities
+│   └── pages/             # page-specific styles
+├── js/main.js             # mobile menu, reveal on scroll, form
 ├── assets/
 │   ├── fonts/             # Montserrat, Space Mono, Nanum Pen Script (OFL)
-│   └── img/               # logo, favicon, imagen Open Graph
-├── docs/screenshots/      # capturas para este README
-└── .github/workflows/     # validación + despliegue a GitHub Pages
+│   └── img/               # logo, favicon, Open Graph image
+├── docs/screenshots/      # screenshots for this README
+└── .github/workflows/     # validation + deployment to GitHub Pages
 ```
 
-## Ejecutar en local
+## Running locally
 
-No necesita instalación. Cualquier servidor estático sirve:
+Nothing to install. Any static server works:
 
 ```bash
-python3 -m http.server 8000     # y abre http://localhost:8000
-# o
-npm start                       # usa "serve"
+python3 -m http.server 8000     # then open http://localhost:8000
+# or
+npm start                       # uses "serve"
 ```
 
-Validar el HTML:
+Validate the HTML:
 
 ```bash
 npm install
 npm run lint:html
 ```
 
-## Personalización
+## Customization
 
-- **Colores:** las variables globales están al inicio de `css/base.css`. El acento de cada página se define con `data-theme` en el `<body>`.
-- **Datos de contacto:** el teléfono (`+502 0000 0000`) y el correo (`hola@bitseda.example`) de `contacto.html` son datos de ejemplo y deben sustituirse por los definitivos antes de publicar.
-- **Equipo:** los nombres y roles de `nosotros.html` son ilustrativos y pueden sustituirse o eliminarse.
-- **Recibir mensajes del formulario:** la URL de un formulario de [Formspree](https://formspree.io) u otro servicio equivalente puede configurarse en el atributo `data-endpoint` de `<form id="contact-form">`. Sin endpoint, el formulario funciona en modo demo y no envía mensajes.
-- **Open Graph:** `og:image` debe apuntar a una URL absoluta después de publicar el sitio.
+- **Colors:** the global variables are at the top of `css/base.css`. Each page's accent is set with `data-theme` on the `<body>`.
+- **Contact details:** the phone (`+502 0000 0000`) and email (`hola@bitseda.example`) in `contacto.html` are placeholders and should be replaced with the real ones before publishing.
+- **Team:** the names and roles in `nosotros.html` are illustrative and can be replaced or removed.
+- **Receiving form messages:** set the URL of a [Formspree](https://formspree.io) form (or a similar service) in the `data-endpoint` attribute of `<form id="contact-form">`. Without an endpoint, the form runs in demo mode and doesn't send anything.
+- **Open Graph:** `og:image` should point to an absolute URL once the site is published.
 
-## Despliegue en GitHub Pages
+## Deploying to GitHub Pages
 
-1. En **Settings → Pages**, seleccionar **Source: GitHub Actions**.
-2. Cada `push` a `main` ejecuta la validación HTML y publica el sitio automáticamente.
+1. In **Settings → Pages**, select **Source: GitHub Actions**.
+2. Every `push` to `main` runs the HTML validation and publishes the site automatically.
 
-## Créditos
+## Credits
 
-- Tipografías: Montserrat, Space Mono y Nanum Pen Script (SIL OFL 1.1), vía [Fontsource](https://fontsource.org).
-- Idea, diseño y desarrollo: Samuel Guzmán.
+- Fonts: Montserrat, Space Mono and Nanum Pen Script (SIL OFL 1.1), via [Fontsource](https://fontsource.org).
+- Idea, design and development: Samuel Guzmán.
 
-## Licencia
+## License
 
 [MIT](LICENSE)
